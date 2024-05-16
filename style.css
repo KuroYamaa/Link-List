@@ -35,6 +35,10 @@
     align-items: center;
 }
 
+#botao-menu {
+    display: none;
+}
+
 label[for="botao-menu"] {
     cursor: pointer;
     background: var(--details);
@@ -56,6 +60,7 @@ label[for="botao-menu"] {
     color: var(--text-color);
     font-family: "Rubik", sans-serif;
     overflow: hidden;/* Esconde oq passa do espaço, pode usar o overflow x para colocar uma barra de rolagem */
+    z-index: 3;
 }
 
 #headerVcircle {
@@ -151,6 +156,13 @@ main {
     font-family: "Rubik", sans-serif;
 }
 
+section {
+    height: auto;
+    min-height: 100vh;
+    margin: 0 auto;
+    width: 90%;
+}
+
 section a {
     text-decoration: none;
     color: var(--text-color);
@@ -163,12 +175,10 @@ section a {
 }
 
 section#sectionInicio {
-    width: 90%;
-    margin: 0 auto;
-    height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 section#sectionInicio>div {
@@ -201,7 +211,7 @@ section#sectionInicio img {
     border: 2px solid var(--text-color);
 }
 
-@media (max-widht: 1200px) {
+@media (max-width: 1200px) {
     #headerH {
         display: flex;
     }
@@ -209,6 +219,7 @@ section#sectionInicio img {
     #headerV {
         margin-left: -250px;
         transition: all 0,4s;
+        top: 0;
     }
     main {
         margin-left: 0;
@@ -216,5 +227,19 @@ section#sectionInicio img {
     }
     #botao-menu:checked ~ #headerV {
         margin-left: 0;
+    }
+}
+
+@media (max-width: 690px) {
+    section#sectionInicio {
+        
+    }
+
+    section#sectionInicio #inicioDescricao {
+        width: 100%;
+    }
+
+    section#sectionInicio #inicioFoto {
+        margin: 0 auto;
     }
 }
