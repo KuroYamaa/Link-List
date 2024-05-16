@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Estilos Globais */
 * {
     margin: 0;
     padding: 0;
@@ -5,164 +8,213 @@
 }
 
 :root {
-    --corTexto: white;
-    --fundoSite: url('imagem/bg-mobile.jpg');
-    --corBorda: rgba(255, 255, 255, 0.5);
-    --corBotao: rgba(255, 255, 255, 0.05);
-    --corBotaoHover: rgba(255, 255, 255, 0.02);
-    --corBrilho: rgba(255, 255, 255, 0.2);
-    --bgModo: url('imagem/sun.svg');
-    --imgPerfil: url('imagem/MinhaFoto1.jpg');
+    --text-color: #fff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --background-header: #0c0c14;
+    --background-main: #10101a;
+    --details: #2fbf71;
 }
 
-.light {
-    --corTexto: black;
-    --fundoSite: url('imagem/bg-mobile-light.jpg');
-    --corBorda: rgba(0, 0, 0, 0.5);
-    --corBotao: rgba(0, 0, 0, 0.05);
-    --corBotaoHover: rgba(0, 0, 0, 0.02);
-    --corBrilho: rgba(0, 0, 0, 0.2);
-    --bgModo: url('imagem/moon-stars.svg');
-    --imgPerfil: url('imagem/MinhaFoto1.jpg');
+#headerH {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--background-main);
+    color: var(--text-color);
+    font-family: "Rubik", sans-serif;
+    z-index: 3;
+    display: none;
 }
 
-body {
-    background: var(--fundoSite) no-repeat center center/cover;
-    color: var(--corTexto);
-}
- 
-main {
+#headerH div {
     width: 90%;
-    max-width: 588px;
-    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-between;
     align-items: center;
 }
 
-#imgPerfil {
-    margin-top: 64px;
-    height: 200px;
-    width: 200px;
-    background: var(--imgPerfil) no-repeat center center/cover;
-    border: 1px solid black;
-    border-radius: 50%;
-
+label[for="botao-menu"] {
+    cursor: pointer;
+    background: var(--details);
+    font-size: 30px;
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-p {
-    margin: 16px 0;
+/* Cabeçalho vertical fixo */
+#headerV {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: var(--background-header);
+    color: var(--text-color);
+    font-family: "Rubik", sans-serif;
+    overflow: hidden;/* Esconde oq passa do espaço, pode usar o overflow x para colocar uma barra de rolagem */
 }
 
-#troca {
-    width: 64px;
-    margin: 4px auto;
-    position: relative;
-    margin: 16px 0;
-}
-
-#btnFundo {
-    width: 64px;
-    height: 24px;
-    background: var(--corBotao);
-    border: 1px solid var(--corBorda);
-    border-radius: 50px;
-}
-
-#btn {
-    width: 32px;/* Largura */
-    height: 32px;/* Altura */
-    background: white var(--bgModo) no-repeat center;
+#headerVcircle {
+    background: var(--details);
+    width: 310px;
+    height: 310px;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    cursor: pointer;
-    animation: slide-back 0.4s;
+    top: -180px;
+    left: -50px;
+    z-index: -1;/* Para colocar debaixo da nossa foto */
 }
 
-.light #btn {
-    animation: slide-in 0.4s forwards;
-}
-
-#btn:hover {
-    outline: 8px solid var(--corBrilho);
-}
-
-#navLinks {
+#profile {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    margin: 65px 0 0;
 }
 
-#navLinks a {
+#profilePhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--text-color);
+    background: url('imagem/MinhaFoto1.jpg') no-repeat center center/cover;
+}
+
+#profileName {
+    margin-top: 10px;
+    letter-spacing: 2px; /* Espaço entre uma letra e outra */
+}
+
+#navMenu {
+    margin: 45px 0;
+}
+
+#navMenu a {
     display: flex;
+    color: var(--text-color);
     text-decoration: none;
-    background: var(--corBotao);
-    border: 1px solid var(--corBorda);
-    padding: 16px 24px;
-    justify-content: center;
-    color: var(--corTexto);
-    border-radius: 8px;
-    margin-bottom: 16px;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-#navLinks a:hover {
-    background: var(--corBotaoHover);
-    border: 1.5px solid var(--corTexto);
+#navMenu ion-icon {
+    margin-right: 10px;
 }
 
+#navMenu a:nth-child(n+6) {
+    border-bottom: none;
+}
+
+#navMenu a:hover {
+    color: var(--details);
+    box-shadow: inset 3px 0 0 var(--details);
+}
 #navSocial {
-    margin-top: 8px;
-    width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 24px;
+    position: fixed;
+    bottom: 0;
+    width: 250px;
+    padding: 12px 0;
 }
 
-#navSocial a{
-    color: var(--corTexto);
+#navSocial a {
     display: flex;
-    padding: 16px;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
     border-radius: 50%;
+    transition: background 0.2s;
+    padding: 8px;
 }
 
 #navSocial a:hover {
-    background: var(--corBrilho);
+    background: var(--details);
 }
 
-footer {
-    margin: 64px 0;
-    text-align: center;
+/* Conteúdo Principal */
+main {
+    position: relative;
+    margin-left: 250px;
+    background: var(--background-main);
+    min-height: 100vh;
+    height: auto;
+    color: var(--text-color);
+    font-family: "Rubik", sans-serif;
 }
 
-@media (min-width: 700px) {
-    :root {
-        --fundoSite: url('imagem/bg-desktop.jpg')
-    }
-
-    .light {
-        --fundoSite: url('imagem/bg-desktop-light.jpg')
-    }
+section a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    width: 160px;/* Tamanho */
+    background: var(--details);
+    box-shadow: 3px 3px 0px var(--text-color);
+    justify-content: center;
+    padding: 10px 20px;
 }
 
-@keyframes slide-in {
-    from {
-        left: 0;
-    }
-    to {
-        left: 50%;
-    }
+section#sectionInicio {
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@keyframes slide-back {
-    from {
-        left: 50%;
+section#sectionInicio>div {
+    width: 49%;
+    min-width: 300px;
+}
+
+section#sectionInicio h1 {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+section#sectionInicio h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+section#sectionInicio p {
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    line-height: 1.7;/* Altura de Linha */
+    text-align: justify;/* Texto Justificado */
+}
+
+section#sectionInicio img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+}
+
+@media (max-widht: 1200px) {
+    #headerH {
+        display: flex;
     }
-    to {
-        left: 0;
+
+    #headerV {
+        margin-left: -250px;
+        transition: all 0,4s;
+    }
+    main {
+        margin-left: 0;
+        margin-top: 70px;
+    }
+    #botao-menu:checked ~ #headerV {
+        margin-left: 0;
     }
 }

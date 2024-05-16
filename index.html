@@ -3,42 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Perfil - Gabriel </title>
+    <title>Perfil - Gabriel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div id="imgPerfil"></div>
+    <header id="headerH">
+        <div>
+            <h1>Gabriel Chagas</h1>
+            <input type="checkbox" id="botao-menu">
+            <label for="botao-menu">&#9776;</label>
+        </div>
+    </header>
 
-        <p> @GabrielChagas </p>
+    <header id="headerV">
 
-        <div id="troca">
-            <div id="btnFundo"></div>
-            <div id="btn" onclick="toggleMode()"></div>
+        <div id="headerVcircle"></div>
+
+        <div id="profile">
+            <div id="profilePhoto"></div>
+            <div id="profileName"> Gabriel Chagas </div>
         </div>
 
-        <nav id="navLinks">
-            <a href=""> link 1 </a>
-            <a href=""> link 2 </a>
-            <a href=""> link 3 </a>
-            <a href=""> link 4 </a>
-        </a></nav>
+        <nav id="navMenu">
+            <a href="">
+                <ion-icon name="home-outline"></ion-icon> Inicio
+            </a>
+            <a href="">
+                <ion-icon name="person-outline"></ion-icon> Sobre Mim
+            </a>
+            <a href="">
+                <ion-icon name="build-outline"></ion-icon> Serviços
+            </a>
+            <a href="">
+                <ion-icon name="briefcase-outline"></ion-icon> Portifólio
+            </a>
+            <a href="">
+                <ion-icon name="reader-outline"></ion-icon> Blogs
+            </a>
+            <a href="">
+                <ion-icon name="call-outline"></ion-icon> Contato
+            </a>
+        </nav>
 
         <nav id="navSocial">
-            <a href=""><ion-icon name="logo-github"></ion-icon> </a>
-            <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
-            <a href=""><ion-icon name="logo-linkedin"></ion-icon></a>
-        </a></nav>
+            <a href="" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a href="" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="" target="_blank">
+                <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="sectionInicio">
+            
+            <div id="inicioDescricao">
+                <h2>Olá, Eu Sou</h2>
+                <h1>Gabriel Chagas</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, quidem molestias magni fuga eos est harum non fugit, ipsam quam debitis dolorum asperiores ullam voluptatem architecto blanditiis repellendus repellat tempora!</p>
+                <a download="Currículo - Gabriel Chagas" href="Docs/Gabriel Aparecido Das Chagas (curriculo) (1).pdf"> Download CV </a>
+            </div>
+
+            <div id="inicioFoto"><img src="" alt=""></div>
+            
+        </section>
     </main>
 
-    <footer>
-        &copy; Desenvolvido por Gabriel Chagas
-    </footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <script src="script/troca.js"></script>
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
