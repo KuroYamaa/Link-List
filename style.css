@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --text-color: #fff;
     --border-color: rgba(255, 255, 255, 0.1);
@@ -174,6 +178,20 @@ section a {
     padding: 10px 20px;
 }
 
+section p {
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    line-height: 1.7;/* Altura de Linha */
+    text-align: justify;/* Texto Justificado */
+}
+
+section h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
 section#sectionInicio {
     display: flex;
     justify-content: space-between;
@@ -191,24 +209,115 @@ section#sectionInicio h1 {
     margin-bottom: 20px;
 }
 
-section#sectionInicio h2 {
-    font-size: 25px;
-    font-weight: normal;
-    margin-bottom: 20px;
-}
-
-section#sectionInicio p {
-    font-size: 18px;
-    font-weight: lighter;
-    margin-bottom: 20px;
-    line-height: 1.7;/* Altura de Linha */
-    text-align: justify;/* Texto Justificado */
-}
-
 section#sectionInicio img {
     width: 100%;
     border-radius: 50%;
     border: 2px solid var(--text-color);
+}
+
+section#sobreMim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section#sobreMim div {
+    width: 49%;
+}
+
+#sobreMimGradeFotos {
+    display: flex;
+    gap: 20px;
+}
+
+.sobreMimFotos {
+    margin-bottom: 20px;
+}
+
+#sobreMimFotosColuna2 {
+    padding-top: 50px;
+}
+
+section#sobreMim img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+section#sobreMim h2 {
+    font-weight: bolder;
+}
+
+#sobreMimRodape {
+    display: flex;
+    gap: 80px;
+}
+
+.sobreMimQuantidade {
+    display: flex;
+    width: 160px;
+}
+
+.sobreMimQuantidade p:first-child {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.sobreMimQuantidade p:last-child {
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+section#servico #servicoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 49%;
+    min-width: 300px;
+    background: var(--background-header);
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+.card:hover {
+    background: var(--details);
+}
+
+section#servico h2 {
+    font-weight: bolder;
+}
+
+.portfolioCardImg {
+    position: relative;
+    width: 500px;
+    height: 350px;
+}
+
+.portfolioCardImg>div:first-child {
+    overflow: hidden;
+}
+
+.portfolioCardImg img {
+    width: 100%;
+}
+
+.portfolioCardImg:hover img {
+    transform: scale(1.1);
+}
+
+.portfolioCardTitulo {
+    position: absolute;
+    width: 80%;
+    height: 200px;
+    background: var(--background-header);
+    bottom: -60%;
+    right: 0;
+    padding: 20px;
 }
 
 @media (max-width: 1200px) {
@@ -228,11 +337,15 @@ section#sectionInicio img {
     #botao-menu:checked ~ #headerV {
         margin-left: 0;
     }
+
+    section#servico h2 {
+        margin-top: 70px;
+    }
 }
 
 @media (max-width: 690px) {
     section#sectionInicio {
-        
+        justify-content: center;
     }
 
     section#sectionInicio #inicioDescricao {
@@ -241,5 +354,18 @@ section#sectionInicio img {
 
     section#sectionInicio #inicioFoto {
         margin: 0 auto;
+    }
+
+    section#sobreMim #sobreMimTexto {
+        width: 100%;
+    }
+
+    section#sobreMim #sobreMimGradeFotos {
+        margin: 50px 0 auto;
+        width: 100%;
+    }
+
+    section#servico .card {
+        width: 100%;
     }
 }
